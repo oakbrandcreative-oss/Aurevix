@@ -234,6 +234,12 @@ ul{list-style:none}
     object-position:center;
     z-index:0;
 }
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    z-index:1;
+    background:linear-gradient(115deg, rgba(15,12,10,.92) 0%, rgba(15,12,10,.74) 45%, rgba(15,12,10,.46) 100%);
+}
 .hero-copy{
     display:flex;
     flex-direction:column;
@@ -337,85 +343,34 @@ ul{list-style:none}
     background:var(--concrete-2);
     border-bottom:1px solid var(--line);
 }
-.partner-card{
+.partner-strip-inner{
+    min-height:54px;
     display:flex;
     align-items:center;
-    gap:26px;
+    gap:14px;
     flex-wrap:wrap;
-    padding:24px 0;
+    padding:12px 0;
+    font-size:13.5px;
+    color:var(--steel);
 }
-.partner-card-logo{
-    width:72px;
-    height:72px;
-    object-fit:cover;
-    border:2px solid var(--ink);
-    background:#fff;
-    flex-shrink:0;
-}
-.partner-card-body{
-    flex:1 1 280px;
-    min-width:220px;
-}
-.partner-card-label{
-    display:block;
+.partner-strip-inner .partner-label{
     font-family:'Oswald', sans-serif;
-    font-size:11px;
+    font-size:11.5px;
     font-weight:600;
-    letter-spacing:.09em;
+    letter-spacing:.08em;
     text-transform:uppercase;
     color:var(--orange-deep);
-    margin-bottom:4px;
 }
-.partner-card-name{
-    display:inline-block;
+.partner-strip-inner .partner-name{
     font-family:'Oswald', sans-serif;
     font-weight:700;
-    font-size:19px;
-    letter-spacing:.01em;
+    font-size:15px;
+    letter-spacing:.02em;
     text-transform:uppercase;
     color:var(--ink);
     border-bottom:2px solid var(--orange);
-    padding-bottom:2px;
+    padding-bottom:1px;
 }
-.partner-card-body p{
-    margin-top:8px;
-    font-size:13.5px;
-    color:var(--steel);
-    max-width:440px;
-}
-.partner-card-links{
-    display:flex;
-    flex-direction:column;
-    gap:7px;
-}
-.partner-card-links a{
-    display:block;
-    width:fit-content;
-    font-family:'Oswald', sans-serif;
-    font-size:12px;
-    font-weight:600;
-    text-transform:uppercase;
-    letter-spacing:.03em;
-    color:var(--ink);
-    border-bottom:1px solid transparent;
-}
-.partner-card-links a:hover{color:var(--orange-deep); border-color:var(--orange-deep)}
-.partner-card-socials{
-    display:flex;
-    gap:10px;
-}
-.partner-card-socials a{
-    width:38px;height:38px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border:2px solid var(--ink);
-    color:var(--ink);
-    flex-shrink:0;
-    transition:background .2s ease, color .2s ease, border-color .2s ease;
-}
-.partner-card-socials a:hover{background:var(--orange); border-color:var(--orange); color:#fff}
-.partner-card-socials svg{width:16px;height:16px;fill:currentColor}
 
 /* TICKER */
 .ticker-bar{
@@ -943,17 +898,6 @@ footer{
     .projects-grid{grid-template-columns:repeat(2,1fr)}
     .contact-grid{grid-template-columns:1fr; gap:40px}
     .cta-banner-inner{flex-direction:column; align-items:flex-start}
-    .partner-card{gap:18px; padding:20px 0}
-    .partner-card-logo{width:56px;height:56px}
-    .ticker{
-        flex-wrap:wrap;
-        white-space:normal;
-        overflow:visible;
-        row-gap:10px;
-        padding:16px 12px;
-        min-height:0;
-    }
-    .ticker span:not(:last-child)::after{margin-left:14px}
 }
 
 @media (max-width: 600px){
@@ -972,8 +916,6 @@ footer{
     .title-block-row{grid-template-columns:1fr;gap:4px}
     .footer-inner{flex-direction:column;gap:8px}
     .stats-grid{grid-template-columns:1fr 1fr}
-    .ticker{font-size:11.5px; gap:0; row-gap:8px}
-    .ticker span:not(:last-child)::after{margin-left:10px}
 }
 
 @media (prefers-reduced-motion: reduce){
@@ -1015,6 +957,7 @@ footer{
     <main>
         <section class="hero" id="home">
             <img class="hero-bg-img" src="images/hero-santier.jpg" alt="" onerror="this.style.display='none'">
+            <div class="hero-overlay"></div>
             <div class="hero-copy">
                 <div class="eyebrow">Construcții civile &amp; industriale</div>
                 <h1>CONSTRUIM<br>CEEA CE <span class="accent">RĂMÂNE</span>.</h1>
@@ -1047,29 +990,10 @@ footer{
         </div>
 
         <div class="partner-strip">
-            <div class="container partner-card">
-                <img class="partner-card-logo" src="images/partner-colorsmart.jpg" alt="Logo Color Smart" onerror="this.style.display='none'">
-                <div class="partner-card-body">
-                    <span class="partner-card-label">Finisaje executate de</span>
-                    <span class="partner-card-name">Color Smart</span>
-                    <p>Sisteme de vopsire și consultanță cromatică pentru fațade și interioare, integrate în proiectele Aurevix.</p>
-                </div>
-                <div class="partner-card-links">
-                    <a href="https://colorsmart.ro/" target="_blank" rel="noopener">Site oficial →</a>
-                    <a href="https://colorsmartpaints.ro/" target="_blank" rel="noopener">Catalog vopseluri →</a>
-                </div>
-                <div class="partner-card-socials">
-                    <a href="https://www.instagram.com/color.smart/" aria-label="Instagram" target="_blank" rel="noopener">
-                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M12 2c2.72 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.22.6 1.77 1.15.55.55.89 1.11 1.15 1.77.25.64.42 1.37.47 2.43.05 1.06.06 1.4.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43-.26.66-.6 1.22-1.15 1.77-.55.55-1.11.89-1.77 1.15-.64.25-1.37.42-2.43.47-1.06.05-1.4.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47-.66-.26-1.22-.6-1.77-1.15-.55-.55-.89-1.11-1.15-1.77-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.22 1.15-1.77.55-.55 1.11-.89 1.77-1.15.64-.25 1.37-.42 2.43-.47C8.94 2.01 9.28 2 12 2zm0 1.8c-2.67 0-2.99.01-4.04.06-.86.04-1.33.18-1.64.3-.41.16-.71.35-1.02.66-.31.31-.5.61-.66 1.02-.12.31-.26.78-.3 1.64-.05 1.05-.06 1.37-.06 4.04s.01 2.99.06 4.04c.04.86.18 1.33.3 1.64.16.41.35.71.66 1.02.31.31.61.5 1.02.66.31.12.78.26 1.64.3 1.05.05 1.37.06 4.04.06s2.99-.01 4.04-.06c.86-.04 1.33-.18 1.64-.3.41-.16.71-.35 1.02-.66.31-.31.5-.61.66-1.02.12-.31.26-.78.3-1.64.05-1.05.06-1.37.06-4.04s-.01-2.99-.06-4.04c-.04-.86-.18-1.33-.3-1.64-.16-.41-.35-.71-.66-1.02-.31-.31-.61-.5-1.02-.66-.31-.12-.78-.26-1.64-.3-1.05-.05-1.37-.06-4.04-.06zm0 3.06a5.14 5.14 0 1 1 0 10.28 5.14 5.14 0 0 1 0-10.28zm0 1.8a3.34 3.34 0 1 0 0 6.68 3.34 3.34 0 0 0 0-6.68zm5.34-1.99a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.facebook.com/colorsmartdistribution/?locale=ro_RO" aria-label="Facebook" target="_blank" rel="noopener">
-                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M13.5 22v-8.5h2.85l.43-3.31H13.5V8.06c0-.96.27-1.61 1.65-1.61h1.76V3.5c-.3-.04-1.35-.13-2.57-.13-2.54 0-4.28 1.55-4.28 4.4v2.46H7.2v3.31h2.86V22h3.44z"/>
-                        </svg>
-                    </a>
-                </div>
+            <div class="container partner-strip-inner">
+                <span class="partner-label">Colaborare</span>
+                <span class="partner-name">Color Smart</span>
+                <span>— consultanță cromatică și sisteme de vopsire pentru fațade și interioare, integrată în proiectele Aurevix.</span>
             </div>
         </div>
 
