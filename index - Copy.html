@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cele patru divizii Aurevix: construcții rezidențiale, hale industriale, renovări & consolidări, amenajări exterioare.">
-    <title>Servicii Aurevix — Case, hale, renovări, exterior</title>
+    <meta name="description" content="Aurevix construiește case, hale și spații comerciale de la fundație până la cheie — echipe proprii, termene ferme și garanție scrisă.">
+    <title>Aurevix — Construcții civile & industriale</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -220,16 +220,34 @@ ul{list-style:none}
     position:relative;
     background:var(--ink);
     color:var(--concrete);
-    display:grid;
-    grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);
-    min-height:640px;
+    min-height:620px;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+}
+.hero-bg-img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    z-index:0;
+}
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    z-index:1;
+    background:linear-gradient(115deg, rgba(15,12,10,.92) 0%, rgba(15,12,10,.74) 45%, rgba(15,12,10,.46) 100%);
 }
 .hero-copy{
     display:flex;
     flex-direction:column;
     justify-content:center;
-    padding:70px clamp(20px,5vw,80px) 60px;
+    padding:90px clamp(20px,5vw,80px);
     position:relative;
+    z-index:2;
+    max-width:700px;
 }
 .hero h1{
     font-family:'Oswald', sans-serif;
@@ -320,6 +338,40 @@ ul{list-style:none}
     margin-top:4px;
 }
 
+/* PARTNER STRIP */
+.partner-strip{
+    background:var(--concrete-2);
+    border-bottom:1px solid var(--line);
+}
+.partner-strip-inner{
+    min-height:54px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    flex-wrap:wrap;
+    padding:12px 0;
+    font-size:13.5px;
+    color:var(--steel);
+}
+.partner-strip-inner .partner-label{
+    font-family:'Oswald', sans-serif;
+    font-size:11.5px;
+    font-weight:600;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--orange-deep);
+}
+.partner-strip-inner .partner-name{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size:15px;
+    letter-spacing:.02em;
+    text-transform:uppercase;
+    color:var(--ink);
+    border-bottom:2px solid var(--orange);
+    padding-bottom:1px;
+}
+
 /* TICKER */
 .ticker-bar{
     background:var(--ink);
@@ -406,7 +458,7 @@ section{padding:96px 0}
 /* DIVISIONS */
 .divisions-grid{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(5,1fr);
     gap:0;
     border:2px solid var(--ink);
     border-right:none;
@@ -616,7 +668,7 @@ section{padding:96px 0}
     font-weight:500;
     text-transform:uppercase;
     letter-spacing:.02em;
-    background:#d47a28;
+    background:#fff;
 }
 
 /* FAQ */
@@ -876,7 +928,6 @@ footer{
 
     <div class="topline">
         <div class="container topline-inner">
-
             <span>Șantiere active — Ilfov &amp; toată țara</span>
         </div>
     </div>
@@ -893,9 +944,9 @@ footer{
                     aria-expanded="false" aria-controls="main-nav">☰</button>
 
             <nav class="nav" id="main-nav">
-                <a href="index.html">Acasă</a>
+                <a class="current" href="index.html">Acasă</a>
                 <a href="despre.html">Despre noi</a>
-                <a class="current" href="servicii.html">Servicii</a>
+                <a href="servicii.html">Servicii</a>
                 <a href="proiecte.html">Proiecte</a>
                 <a href="contact.html">Contact</a>
                 <a class="cta" href="contact.html">Cere ofertă</a>
@@ -904,151 +955,130 @@ footer{
     </header>
 
     <main>
-        <section class="page-hero">
-            <div class="container">
-                <div class="eyebrow">Ce construim</div>
-                <h1>CINCI DIVIZII.<br><span class="accent">UN SINGUR STANDARD.</span></h1>
-                <p class="lead">
-                    De la o casă de familie până la o hală industrială sau o
-                    amenajare interioară, fiecare proiect Aurevix trece prin
-                    aceleași echipe proprii și aceleași verificări de calitate.
+        <section class="hero" id="home">
+            <img class="hero-bg-img" src="images/hero-santier.jpg" alt="" onerror="this.style.display='none'">
+            <div class="hero-overlay"></div>
+            <div class="hero-copy">
+                <div class="eyebrow">Construcții civile &amp; industriale</div>
+                <h1>CONSTRUIM<br>CEEA CE <span class="accent">RĂMÂNE</span>.</h1>
+                <p class="hero-subtitle">
+                    Aurevix ridică locuințe, hale, spații comerciale și amenajări
+                    interioare de la primul metru cub de beton până la predarea
+                    cheii — cu echipe proprii, termene clare și garanție scrisă
+                    pe lucrările structurale.
                 </p>
+                <div class="hero-actions">
+                    <a class="button primary" href="contact.html">Cere ofertă gratuită</a>
+                    <a class="button secondary" href="servicii.html">Vezi diviziile</a>
+                </div>
             </div>
         </section>
 
-        <section class="light-section" style="padding-bottom:0">
-            <div class="container">
+        <div class="hazard-bar"></div>
 
-                <div class="service-block" id="case">
-                    <div>
+        <div class="ticker-bar">
+            <div class="container">
+                <div class="ticker">
+                    <span>FUNDAȚII ȘI STRUCTURĂ</span>
+                    <span>ZIDĂRIE ȘI ACOPERIȘ</span>
+                    <span>INSTALAȚII TERMICE ȘI SANITARE</span>
+                    <span>FINISAJE INTERIOARE</span>
+                    <span>AMENAJĂRI EXTERIOARE</span>
+                    <span>RENOVĂRI ȘI CONSOLIDĂRI</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="partner-strip">
+            <div class="container partner-strip-inner">
+                <span class="partner-label">Colaborare</span>
+                <span class="partner-name">Color Smart</span>
+                <span>— consultanță cromatică și sisteme de vopsire pentru fațade și interioare, integrată în proiectele Aurevix.</span>
+            </div>
+        </div>
+
+        <section id="divizii" class="light-section">
+            <div class="container">
+                <div class="section-heading">
+                    <div class="eyebrow">Domenii de activitate</div>
+                    <h2>Cinci divizii, un<br>singur șantier de încredere.</h2>
+                    <p>
+                        Fiecare proiect Aurevix trece prin aceleași echipe verificate,
+                        indiferent dacă este o casă de familie, o hală industrială
+                        sau o amenajare interioară.
+                    </p>
+                </div>
+
+                <div class="divisions-grid">
+                    <article class="division-card">
                         <span class="division-index">DIVIZIA 01 — AUREVIX CASE</span>
-                        <h3>Case &amp; locuințe</h3>
-                        <p class="service-desc">Construcții rezidențiale la cheie — case, vile și duplexuri — de la primul metru cub de fundație până la ultimul detaliu de finisaj interior.</p>
-                        <div class="service-block-cta">
-                            <a class="button primary" href="contact.html">Cere ofertă pentru o casă</a>
-                        </div>
-                    </div>
-                    <ul class="service-list">
-                        <li>Fundații și structură din beton armat</li>
-                        <li>Zidărie și acoperiș</li>
-                        <li>Instalații electrice, termice și sanitare</li>
-                        <li>Finisaje interioare la cheie</li>
-                        <li>Consultanță pentru alegerea proiectului de arhitectură</li>
-                    </ul>
-                </div>
+                        <h3>Case &amp;<br>locuințe</h3>
+                        <p>Construcții rezidențiale la cheie — case, vile și duplexuri, de la fundație până la ultimul detaliu de finisaj.</p>
+                        <a class="division-link" href="servicii.html#case">Detalii →</a>
+                    </article>
 
-                <div class="service-block" id="hale">
-                    <div>
+                    <article class="division-card">
                         <span class="division-index">DIVIZIA 02 — AUREVIX HALE</span>
-                        <h3>Hale &amp; spații comerciale</h3>
-                        <p class="service-desc">Structuri industriale și comerciale gândite pentru flux logistic, rezistență la sarcini mari și termene scurte de execuție.</p>
-                        <div class="service-block-cta">
-                            <a class="button primary" href="contact.html">Cere ofertă pentru o hală</a>
-                        </div>
-                    </div>
-                    <ul class="service-list">
-                        <li>Structuri metalice și hale prefabricate</li>
-                        <li>Platforme betonate industriale</li>
-                        <li>Hidroizolații și termoizolații pentru acoperiș</li>
-                        <li>Amenajare spații de birouri în incinta halei</li>
-                        <li>Coordonare cu proiectantul de instalații industriale</li>
-                    </ul>
-                </div>
+                        <h3>Hale &amp;<br>spații comerciale</h3>
+                        <p>Structuri industriale și comerciale gândite pentru flux logistic, rezistență și termene scurte de execuție.</p>
+                        <a class="division-link" href="servicii.html#hale">Detalii →</a>
+                    </article>
 
-                <div class="service-block" id="renovari">
-                    <div>
+                    <article class="division-card">
                         <span class="division-index">DIVIZIA 03 — AUREVIX RENOVĂRI</span>
-                        <h3>Renovări &amp; consolidări</h3>
-                        <p class="service-desc">Modernizăm clădiri existente — de la mansardări și izolații termice, până la consolidări structurale complete în urma unei expertize tehnice.</p>
-                        <div class="service-block-cta">
-                            <a class="button primary" href="contact.html">Cere ofertă de renovare</a>
-                        </div>
-                    </div>
-                    <ul class="service-list">
-                        <li>Consolidări structurale (fisuri, tasări, risc seismic)</li>
-                        <li>Mansardări și extinderi</li>
-                        <li>Refacere instalații electrice și sanitare</li>
-                        <li>Izolații termice exterioare (sistem ETICS)</li>
-                        <li>Renovări complete, de la demolare la finisaj</li>
-                    </ul>
-                </div>
+                        <h3>Renovări &amp;<br>consolidări</h3>
+                        <p>Modernizăm clădiri existente — de la mansardări și izolații, până la consolidări structurale complete.</p>
+                        <a class="division-link" href="servicii.html#renovari">Detalii →</a>
+                    </article>
 
-                <div class="service-block" id="exterior">
-                    <div>
+                    <article class="division-card">
                         <span class="division-index">DIVIZIA 04 — AUREVIX EXTERIOR</span>
-                        <h3>Amenajări exterioare</h3>
-                        <p class="service-desc">Alei, terase, împrejmuiri și sisteme de scurgere — finalul care face diferența dintre un șantier și o casă gata de locuit.</p>
-                        <div class="service-block-cta">
-                            <a class="button primary" href="contact.html">Cere ofertă pentru exterior</a>
-                        </div>
-                    </div>
-                    <ul class="service-list">
-                        <li>Alei și platforme betonate sau pavate</li>
-                        <li>Împrejmuiri și porți</li>
-                        <li>Terase și pergole</li>
-                        <li>Sisteme de scurgere și drenaj</li>
-                        <li>Amenajări peisagistice de bază</li>
-                    </ul>
-                </div>
+                        <h3>Amenajări<br>exterioare</h3>
+                        <p>Alei, terase, împrejmuiri și sisteme de scurgere — finalul care face un șantier să arate ca o casă.</p>
+                        <a class="division-link" href="servicii.html#exterior">Detalii →</a>
+                    </article>
 
-                <div class="service-block" id="interior">
-                    <div>
+                    <article class="division-card">
                         <span class="division-index">DIVIZIA 05 — AUREVIX INTERIOR</span>
-                        <h3>Design interior</h3>
-                        <p class="service-desc">Amenajări interioare complete, de la compartimentare și pardoseli până la finisaje și consultanță de culoare, prin parteneriatul nostru cu Color Smart.</p>
-                        <div class="service-block-cta">
-                            <a class="button primary" href="contact.html">Cere ofertă pentru interior</a>
-                        </div>
-                    </div>
-                    <ul class="service-list">
-                        <li>Compartimentări și gips-carton</li>
-                        <li>Pardoseli, plăci și parchet</li>
-                        <li>Vopsitorii și sisteme decorative Color Smart</li>
-                        <li>Consultanță cromatică pentru interior și fațadă</li>
-                        <li>Coordonare cu designerul de interior al clientului</li>
-                    </ul>
-                </div>
-
-            </div>
-        </section>
-
-        <section class="dark-section">
-            <div class="container">
-                <div class="section-heading">
-                    <div class="eyebrow">Lucrări conexe</div>
-                    <h2>Ce mai facem<br>pe șantier.</h2>
-                    <p>Servicii pe care le integrăm în orice proiect, la cerere, fără să fie nevoie de un contractor separat.</p>
-                </div>
-                <div class="chip-row">
-                    <span class="chip">Demolări controlate</span>
-                    <span class="chip">Cofraje &amp; armături</span>
-                    <span class="chip">Hidroizolații</span>
-                    <span class="chip">Șape &amp; pardoseli industriale</span>
-                    <span class="chip">Vopsitorii exterioare</span>
-                    <span class="chip">Tâmplărie PVC &amp; aluminiu</span>
-                    <span class="chip">Consultanță cromatică Color Smart</span>
+                        <h3>Design<br>interior</h3>
+                        <p>Amenajări interioare complete, cu consultanță de culoare și sisteme de vopsire prin parteneriatul cu Color Smart.</p>
+                        <a class="division-link" href="servicii.html#interior">Detalii →</a>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section class="light-section">
+        <section id="proces" class="dark-section">
             <div class="container">
                 <div class="section-heading">
-                    <div class="eyebrow">Întrebări frecvente</div>
-                    <h2>Înainte să<br>ne scrii.</h2>
+                    <div class="eyebrow">Cum lucrăm</div>
+                    <h2>Un șantier,<br>patru etape clare.</h2>
+                    <p>
+                        Aceeași secvență de lucru la fiecare proiect — de la prima
+                        vizită tehnică până la ridicarea ultimului schelet de protecție.
+                    </p>
                 </div>
-                <div class="faq-list">
-                    <div class="faq-item">
-                        <h4>Lucrați și cu materiale puse de client?</h4>
-                        <p>Da. Putem executa lucrarea cu materialele alese de tine sau putem propune o listă de materiale verificate, în funcție de buget și termen.</p>
+
+                <div class="process-list">
+                    <div class="process-step">
+                        <div class="process-num stamp">01</div>
+                        <h3>Vizită &amp; ofertă</h3>
+                        <p>Măsurători la fața locului și o ofertă fermă în maximum 5 zile lucrătoare.</p>
                     </div>
-                    <div class="faq-item">
-                        <h4>Oferiți garanție scrisă?</h4>
-                        <p>Da, oferim garanție scrisă pentru lucrările structurale și garanții specifice pentru instalații și finisaje, cu termenii menționați clar în contract.</p>
+                    <div class="process-step">
+                        <div class="process-num stamp">02</div>
+                        <h3>Proiect &amp; avize</h3>
+                        <p>Documentație tehnică completă și obținerea autorizațiilor înainte de primul excavator.</p>
                     </div>
-                    <div class="faq-item">
-                        <h4>Cât durează primirea unei oferte?</h4>
-                        <p>De obicei, sub 5 zile lucrătoare de la vizita tehnică, în funcție de complexitatea proiectului.</p>
+                    <div class="process-step">
+                        <div class="process-num stamp">03</div>
+                        <h3>Execuție</h3>
+                        <p>Echipe proprii pe șantier, cu control de calitate la fundație, structură și instalații.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-num stamp">04</div>
+                        <h3>Recepție &amp; garanție</h3>
+                        <p>Predare la cheie cu proces verbal de recepție și garanție scrisă, menționată clar în contract.</p>
                     </div>
                 </div>
             </div>

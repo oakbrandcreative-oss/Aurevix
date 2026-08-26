@@ -220,34 +220,16 @@ ul{list-style:none}
     position:relative;
     background:var(--ink);
     color:var(--concrete);
+    display:grid;
+    grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);
     min-height:620px;
-    display:flex;
-    align-items:center;
-    overflow:hidden;
-}
-.hero-bg-img{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    object-position:center;
-    z-index:0;
-}
-.hero-overlay{
-    position:absolute;
-    inset:0;
-    z-index:1;
-    background:linear-gradient(115deg, rgba(15,12,10,.92) 0%, rgba(15,12,10,.74) 45%, rgba(15,12,10,.46) 100%);
 }
 .hero-copy{
     display:flex;
     flex-direction:column;
     justify-content:center;
-    padding:90px clamp(20px,5vw,80px);
+    padding:70px clamp(20px,5vw,80px) 60px;
     position:relative;
-    z-index:2;
-    max-width:700px;
 }
 .hero h1{
     font-family:'Oswald', sans-serif;
@@ -300,11 +282,23 @@ ul{list-style:none}
     position:relative;
     background:var(--orange);
     margin:34px 34px 34px 0;
-    padding:36px;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
     overflow:hidden;
+    border:2px solid var(--ink);
+}
+.hero-visual img{
+    display:block;
+    width:100%;
+    height:100%;
+    min-height:420px;
+    object-fit:cover;
+    filter:brightness(.6) saturate(1.05);
+}
+.hero-visual::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:linear-gradient(180deg, rgba(15,12,10,0) 40%, rgba(15,12,10,.5) 100%);
 }
 .hero-visual .hex-outline{
     position:absolute;
@@ -928,7 +922,6 @@ footer{
 
     <div class="topline">
         <div class="container topline-inner">
-            <span>Sediu: București, România</span>
             <span>Șantiere active — Ilfov &amp; toată țara</span>
         </div>
     </div>
@@ -957,8 +950,6 @@ footer{
 
     <main>
         <section class="hero" id="home">
-            <img class="hero-bg-img" src="images/hero-santier.jpg" alt="" onerror="this.style.display='none'">
-            <div class="hero-overlay"></div>
             <div class="hero-copy">
                 <div class="eyebrow">Construcții civile &amp; industriale</div>
                 <h1>CONSTRUIM<br>CEEA CE <span class="accent">RĂMÂNE</span>.</h1>
@@ -972,6 +963,9 @@ footer{
                     <a class="button primary" href="contact.html">Cere ofertă gratuită</a>
                     <a class="button secondary" href="servicii.html">Vezi diviziile</a>
                 </div>
+            </div>
+            <div class="hero-visual">
+                <img src="images/hero-santier.jpg" alt="" onerror="this.style.display='none'">
             </div>
         </section>
 
