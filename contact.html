@@ -774,6 +774,70 @@ section{padding:96px 0}
     padding:20px 18px;
     background:var(--concrete-2);
 }
+
+/* CONTACT PANEL — signature stamped-card layout */
+.contact-panel{
+    background:var(--ink);
+    color:var(--concrete);
+    position:relative;
+    overflow:hidden;
+}
+.contact-panel::before{
+    content:"";
+    position:absolute;
+    right:-70px;
+    bottom:-90px;
+    width:260px;
+    height:260px;
+    border:36px solid rgba(210,113,31,.16);
+    transform:rotate(14deg);
+}
+.contact-panel-head{
+    padding:32px 30px 26px;
+    position:relative;
+    border-bottom:1px solid var(--line-dark);
+}
+.contact-panel-head .eyebrow{margin-bottom:10px}
+.contact-panel-email{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size:clamp(20px,2.4vw,26px);
+    text-transform:uppercase;
+    letter-spacing:.01em;
+    word-break:break-word;
+}
+.contact-panel-email a{border-bottom:3px solid var(--orange)}
+.contact-panel-email a:hover{color:var(--orange-light)}
+.contact-panel-tiles{
+    position:relative;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+}
+.contact-tile{
+    padding:24px 20px;
+    border-right:1px solid var(--line-dark);
+    border-top:1px solid var(--line-dark);
+}
+.contact-tile:last-child{border-right:none}
+.contact-tile .contact-tile-num{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size:11px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--orange-light);
+    margin-bottom:10px;
+}
+.contact-tile p{
+    font-size:13.5px;
+    color:#CFC6B8;
+    line-height:1.5;
+}
+.contact-panel-foot{
+    position:relative;
+    padding:24px 30px 30px;
+}
+.contact-panel-foot .button{width:100%}
 .prep-list{
     margin-top:28px;
     border:2px solid var(--ink);
@@ -846,6 +910,8 @@ footer{
     .projects-grid{grid-template-columns:repeat(2,1fr)}
     .contact-grid{grid-template-columns:1fr; gap:40px}
     .cta-banner-inner{flex-direction:column; align-items:flex-start}
+    .contact-panel-tiles{grid-template-columns:1fr}
+    .contact-tile{border-right:none}
 }
 
 @media (max-width: 600px){
@@ -939,25 +1005,29 @@ footer{
                     </div>
                 </div>
 
-                <div class="title-block">
-                    <div class="title-block-row">
-                        <span class="label stamp">Email</span>
-                        <span class="value"><a href="mailto:contact@aurevix.ro">contact@aurevix.ro</a></span>
+                <div class="contact-panel">
+                    <div class="contact-panel-head">
+                        <div class="eyebrow">Scrie-ne direct</div>
+                        <div class="contact-panel-email">
+                            <a href="mailto:contact@aurevix.ro">contact@aurevix.ro</a>
+                        </div>
                     </div>
-                    <div class="title-block-row">
-                        <span class="label stamp">Program</span>
-                        <span class="value">Luni – Vineri · 08:00 – 17:00</span>
+                    <div class="contact-panel-tiles">
+                        <div class="contact-tile">
+                            <div class="contact-tile-num">Program</div>
+                            <p>Luni – Vineri<br>08:00 – 17:00</p>
+                        </div>
+                        <div class="contact-tile">
+                            <div class="contact-tile-num">Acoperire</div>
+                            <p>București &amp; Ilfov, plus proiecte punctuale în toată țara</p>
+                        </div>
+                        <div class="contact-tile">
+                            <div class="contact-tile-num">Răspuns</div>
+                            <p>Revenim cu o evaluare și o ofertă, de obicei în câteva zile lucrătoare</p>
+                        </div>
                     </div>
-                    <div class="title-block-row">
-                        <span class="label stamp">Acoperire</span>
-                        <span class="value">București &amp; Ilfov, plus proiecte punctuale în toată țara</span>
-                    </div>
-                    <div class="title-block-row">
-                        <span class="label stamp">Răspuns</span>
-                        <span class="value">Sub 5 zile lucrătoare, cu ofertă fermă</span>
-                    </div>
-                    <div class="title-block-cta">
-                        <a class="button primary" href="mailto:contact@aurevix.ro?subject=Solicitare%20oferta%20santier" style="width:100%">
+                    <div class="contact-panel-foot">
+                        <a class="button primary" href="mailto:contact@aurevix.ro?subject=Solicitare%20oferta%20santier">
                             Trimite un email
                         </a>
                     </div>
