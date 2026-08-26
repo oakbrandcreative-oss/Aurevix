@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cele patru divizii Aurevix: construcții rezidențiale, hale industriale, renovări & consolidări, amenajări exterioare.">
+    <title>Servicii Aurevix — Case, hale, renovări, exterior</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+:root{
+    --ink:#171310;
+    --ink-2:#0F0C0A;
+    --charcoal:#2E2822;
+    --orange:#D2711F;
+    --orange-deep:#9F5115;
+    --orange-light:#E89143;
+    --concrete:#EAE4D9;
+    --concrete-2:#DFD7C8;
+    --steel:#5B5347;
+    --line:rgba(23,19,16,.14);
+    --line-dark:rgba(255,255,255,.14);
+    --safety:#E8AC1E;
+    --max:1440px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+    font-family:'Work Sans', Arial, sans-serif;
+    background:var(--concrete);
+    color:var(--ink);
+    line-height:1.6;
+    overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+ul{list-style:none}
+
+.container{
+    width:min(calc(100% - 48px), var(--max));
+    margin-inline:auto;
+}
+
+.stamp{
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:.09em;
+}
+
+/* SITE TAG — signature stamped-permit motif */
+.site-tag{
+    position:absolute;
+    background:var(--ink);
+    color:var(--concrete);
+    border:2px solid var(--orange);
+    padding:7px 14px;
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    font-size:11px;
+    transform:rotate(-3deg);
+    box-shadow:4px 4px 0 var(--orange);
+    z-index:4;
+    white-space:nowrap;
+}
+
+/* HAZARD STRIPE DIVIDER */
+.hazard-bar{
+    height:12px;
+    background:repeating-linear-gradient(-45deg, var(--orange) 0 16px, var(--ink) 16px 32px);
+}
+
+/* TOPLINE */
+.topline{
+    background:var(--ink);
+    color:var(--concrete-2);
+    border-bottom:1px solid var(--line-dark);
+    font-size:11.5px;
+    letter-spacing:.04em;
+}
+.topline-inner{
+    min-height:36px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+.topline-inner span:last-child{color:var(--orange-light)}
+
+/* HEADER */
+.header{
+    background:var(--concrete);
+    position:sticky;
+    top:0;
+    z-index:1000;
+    border-bottom:3px solid var(--ink);
+}
+.header-inner{
+    min-height:92px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+}
+.brand{
+    display:flex;
+    align-items:center;
+    min-width:150px;
+}
+.brand img{
+    width:auto;
+    max-width:190px;
+    max-height:46px;
+    object-fit:contain;
+}
+.brand-fallback{
+    display:none;
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size:24px;
+    text-transform:uppercase;
+    letter-spacing:.02em;
+}
+
+.nav{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+.nav a{
+    font-family:'Oswald', sans-serif;
+    font-size:14px;
+    font-weight:500;
+    letter-spacing:.03em;
+    text-transform:uppercase;
+    color:var(--ink);
+    padding:10px 14px;
+    border-bottom:3px solid transparent;
+    transition:border-color .15s ease, color .15s ease;
+}
+.nav a:hover{border-color:var(--orange-light)}
+.nav a.current{border-color:var(--orange); color:var(--orange-deep)}
+.nav .cta{
+    color:#fff;
+    background:var(--ink);
+    padding:13px 22px;
+    margin-left:10px;
+    border-bottom:none;
+}
+.nav .cta:hover{background:var(--orange-deep); border-color:transparent}
+
+.menu-toggle{
+    display:none;
+    border:2px solid var(--ink);
+    background:transparent;
+    color:var(--ink);
+    width:46px;
+    height:46px;
+    cursor:pointer;
+    font-family:'Oswald',sans-serif;
+    font-size:18px;
+}
+
+/* PAGE HERO (interior pages) */
+.page-hero{
+    position:relative;
+    background:var(--ink);
+    color:var(--concrete);
+    padding:70px 0 60px;
+    overflow:hidden;
+}
+.page-hero::before{
+    content:"";
+    position:absolute;
+    right:-120px;
+    top:-120px;
+    width:420px;
+    height:420px;
+    border:60px solid rgba(210,113,31,.14);
+    transform:rotate(18deg);
+}
+.eyebrow{
+    font-family:'Oswald', sans-serif;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--orange-light);
+    margin-bottom:16px;
+    position:relative;
+}
+.eyebrow::before{content:"— "; color:var(--orange)}
+.page-hero h1{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size:clamp(38px,5.6vw,68px);
+    line-height:.98;
+    letter-spacing:-.005em;
+    text-transform:uppercase;
+    position:relative;
+}
+.page-hero h1 .accent{color:var(--orange-light)}
+.page-hero .lead{
+    max-width:620px;
+    margin-top:22px;
+    color:#CFC6B8;
+    font-size:16.5px;
+    position:relative;
+}
+
+/* HOME HERO */
+.hero{
+    position:relative;
+    background:var(--ink);
+    color:var(--concrete);
+    display:grid;
+    grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);
+    min-height:640px;
+}
+.hero-copy{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:70px clamp(20px,5vw,80px) 60px;
+    position:relative;
+}
+.hero h1{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size:clamp(44px,6.2vw,88px);
+    line-height:.96;
+    letter-spacing:-.005em;
+    text-transform:uppercase;
+}
+.hero h1 .accent{color:var(--orange-light)}
+.hero-subtitle{
+    max-width:520px;
+    margin-top:24px;
+    color:#CFC6B8;
+    font-size:16px;
+}
+.hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-top:34px;
+}
+.button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    min-height:52px;
+    padding:0 28px;
+    border:2px solid var(--ink);
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    font-family:'Oswald', monospace;
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    font-size:13.5px;
+}
+.button.primary{
+    background:var(--orange);
+    color:#fff;
+    border-color:var(--orange);
+}
+.button.primary:hover{background:var(--orange-deep);border-color:var(--orange-deep)}
+.button.secondary{color:var(--concrete); border-color:var(--concrete)}
+.button.secondary:hover{background:rgba(255,255,255,.08)}
+.light-section .button.secondary{color:var(--ink);border-color:var(--ink)}
+.light-section .button.secondary:hover{background:rgba(23,19,16,.06)}
+
+.hero-visual{
+    position:relative;
+    background:var(--orange);
+    margin:34px 34px 34px 0;
+    padding:36px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    overflow:hidden;
+}
+.hero-visual .hex-outline{
+    position:absolute;
+    right:-60px;
+    bottom:-70px;
+    width:320px;
+    height:auto;
+    opacity:.25;
+}
+.hero-stats{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+    z-index:2;
+}
+.hero-stat-num{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size:clamp(32px,3.4vw,44px);
+    line-height:1;
+    color:var(--ink);
+}
+.hero-stat-label{
+    font-family:'Oswald', sans-serif;
+    font-size:12px;
+    font-weight:500;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+    margin-top:4px;
+}
+
+/* TICKER */
+.ticker-bar{
+    background:var(--ink);
+    border-top:1px solid var(--line-dark);
+    border-bottom:3px solid var(--orange);
+    overflow:hidden;
+}
+.ticker{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:28px;
+    min-height:50px;
+    white-space:nowrap;
+    overflow:auto;
+    scrollbar-width:none;
+    font-family:'Oswald', sans-serif;
+    font-size:13px;
+    font-weight:500;
+    color:var(--concrete-2);
+    text-transform:uppercase;
+    letter-spacing:.07em;
+}
+.ticker::-webkit-scrollbar{display:none}
+.ticker span:not(:last-child)::after{content:"•"; margin-left:28px; color:var(--orange)}
+
+/* SECTIONS */
+section{padding:96px 0}
+.section-heading{
+    margin-bottom:46px;
+    max-width:680px;
+}
+.section-heading .eyebrow{margin-bottom:14px}
+.section-heading h2{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size:clamp(32px,4.2vw,56px);
+    line-height:1.0;
+    text-transform:uppercase;
+}
+.section-heading p{
+    margin-top:16px;
+    color:var(--steel);
+    font-size:15.5px;
+}
+.dark-section{background:var(--ink); color:var(--concrete)}
+.dark-section .section-heading p{color:#B9AF9E}
+.light-section{background:var(--concrete)}
+.light-section .eyebrow{color:var(--orange-deep)}
+.light-section .eyebrow::before{color:var(--orange-deep)}
+
+/* STATS BAR */
+.stats-bar{
+    background:var(--concrete-2);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+}
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    padding:36px 0;
+}
+.stat-item{
+    text-align:center;
+    border-left:1px solid var(--line);
+    padding:0 12px;
+}
+.stat-item:first-child{border-left:none}
+.stat-num{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size:clamp(28px,3vw,40px);
+    color:var(--orange-deep);
+}
+.stat-label{
+    margin-top:4px;
+    font-size:12.5px;
+    color:var(--steel);
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    font-family:'Oswald', sans-serif;
+}
+
+/* DIVISIONS */
+.divisions-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:0;
+    border:2px solid var(--ink);
+    border-right:none;
+}
+.division-card{
+    background:#fff;
+    border-right:2px solid var(--ink);
+    padding:30px 24px 34px;
+    display:flex;
+    flex-direction:column;
+    position:relative;
+    transition:background .2s ease;
+}
+.division-card:hover{background:#F5EFE4}
+.division-index{
+    font-family:'Oswald', sans-serif;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:.08em;
+    color:var(--ink);
+    background:var(--orange);
+    display:inline-block;
+    padding:4px 10px;
+    margin-bottom:18px;
+    width:fit-content;
+}
+.division-card h3{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size:23px;
+    text-transform:uppercase;
+    line-height:1.05;
+    margin-bottom:12px;
+}
+.division-card p{
+    color:var(--steel);
+    font-size:14px;
+    flex-grow:1;
+}
+.division-link{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    margin-top:18px;
+    font-family:'Oswald', sans-serif;
+    font-size:12px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    color:var(--ink);
+    border-bottom:2px solid var(--orange);
+    padding-bottom:3px;
+    width:fit-content;
+}
+
+/* PROCESS */
+.process-list{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:0;
+    position:relative;
+}
+.process-list::before{
+    content:"";
+    position:absolute;
+    top:19px;
+    left:0;
+    right:0;
+    height:2px;
+    background:repeating-linear-gradient(90deg, var(--steel) 0 10px, transparent 10px 18px);
+}
+.process-step{
+    padding-right:24px;
+    position:relative;
+}
+.process-num{
+    width:40px;
+    height:40px;
+    border:3px solid var(--orange);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size:15px;
+    background:var(--ink);
+    color:#fff;
+    position:relative;
+    z-index:2;
+    margin-bottom:22px;
+}
+.dark-section .process-num{background:var(--concrete); color:var(--ink)}
+.process-step h3{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size:22px;
+    text-transform:uppercase;
+    margin-bottom:10px;
+}
+.process-step p{
+    color:var(--steel);
+    font-size:14px;
+    max-width:280px;
+}
+.dark-section .process-step p{color:#B9AF9E}
+
+/* VALUES GRID (despre) */
+.values-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+.value-card{
+    background:#fff;
+    border:2px solid var(--ink);
+    padding:26px 22px;
+}
+.value-card .value-icon{
+    width:38px;height:38px;
+    margin-bottom:16px;
+    color:var(--orange-deep);
+}
+.value-card h3{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size:19px;
+    text-transform:uppercase;
+    margin-bottom:8px;
+}
+.value-card p{color:var(--steel); font-size:13.5px}
+
+/* TIMELINE (despre) */
+.timeline{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+.timeline-item{
+    border-top:4px solid var(--orange);
+    padding-top:16px;
+}
+.timeline-year{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size:30px;
+    color:var(--ink);
+}
+.timeline-item p{margin-top:8px; color:var(--steel); font-size:13.5px}
+
+/* SERVICE DETAIL BLOCKS (servicii) */
+.service-block{
+    display:grid;
+    grid-template-columns:.85fr 1.15fr;
+    gap:50px;
+    padding:64px 0;
+    border-bottom:1px solid var(--line);
+    align-items:start;
+}
+.service-block:last-of-type{border-bottom:none}
+.service-block .division-index{margin-bottom:16px}
+.service-block h3{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size:clamp(26px,3vw,38px);
+    text-transform:uppercase;
+    line-height:1.02;
+}
+.service-block .service-desc{
+    margin-top:16px;
+    color:var(--steel);
+    font-size:15px;
+    max-width:420px;
+}
+.service-list{
+    display:grid;
+    gap:0;
+}
+.service-list li{
+    padding:14px 0;
+    border-bottom:1px solid var(--line);
+    font-size:14.5px;
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+}
+.service-list li:first-child{border-top:1px solid var(--line)}
+.service-list li::before{
+    content:"";
+    width:9px;height:9px;
+    background:var(--orange);
+    margin-top:6px;
+    flex-shrink:0;
+}
+.service-block-cta{margin-top:22px}
+
+/* related chips (servicii) */
+.chip-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+.chip{
+    border:2px solid var(--ink);
+    padding:10px 16px;
+    font-family:'Oswald', sans-serif;
+    font-size:13px;
+    font-weight:500;
+    text-transform:uppercase;
+    letter-spacing:.02em;
+    background:#fff;
+}
+
+/* FAQ */
+.faq-list{display:grid; gap:0}
+.faq-item{
+    border-bottom:1px solid var(--line);
+    padding:26px 0;
+}
+.faq-item:first-child{border-top:1px solid var(--line)}
+.faq-item h4{
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    font-size:17px;
+    text-transform:uppercase;
+    margin-bottom:8px;
+}
+.faq-item p{color:var(--steel); font-size:14.5px; max-width:640px}
+
+/* PROJECTS GRID */
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+}
+.project-card{
+    background:#fff;
+    border:2px solid var(--ink);
+    display:flex;
+    flex-direction:column;
+    position:relative;
+}
+.project-band{
+    height:110px;
+    display:flex;
+    align-items:flex-end;
+    padding:16px 18px;
+    position:relative;
+    overflow:hidden;
+}
+.project-band svg{width:34px;height:34px;color:rgba(255,255,255,.9)}
+.project-band.c-orange{background:var(--orange)}
+.project-band.c-orange svg{color:rgba(23,19,16,.6)}
+.project-band.c-ink{background:var(--ink)}
+.project-band.c-steel{background:var(--steel)}
+.project-tag{
+    font-family:'Oswald', sans-serif;
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:#fff;
+    position:absolute;
+    top:14px; right:16px;
+}
+.project-band.c-orange .project-tag{color:var(--ink)}
+.project-body{padding:22px 22px 26px}
+.project-body h3{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size:20px;
+    text-transform:uppercase;
+    margin-bottom:6px;
+    line-height:1.1;
+}
+.project-meta{
+    font-family:'Oswald', sans-serif;
+    font-size:11.5px;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    color:var(--orange-deep);
+    margin-bottom:12px;
+}
+.project-body p{color:var(--steel); font-size:13.5px}
+.project-specs{
+    display:flex;
+    gap:18px;
+    margin-top:16px;
+    padding-top:14px;
+    border-top:1px solid var(--line);
+    font-size:12px;
+    font-family:'Oswald', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.03em;
+    color:var(--steel);
+}
+.projects-note{
+    margin-top:36px;
+    padding:20px 24px;
+    border-left:4px solid var(--orange);
+    background:var(--concrete-2);
+    font-size:14px;
+    color:var(--steel);
+    max-width:720px;
+}
+
+/* CTA BANNER */
+.cta-banner{
+    background:var(--orange);
+    color:var(--ink);
+    padding:70px 0;
+}
+.cta-banner-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+    flex-wrap:wrap;
+}
+.cta-banner h2{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size:clamp(28px,3.6vw,44px);
+    text-transform:uppercase;
+    line-height:1.02;
+    max-width:560px;
+}
+.cta-banner p{margin-top:10px; font-size:14.5px; max-width:480px}
+.cta-banner .button{border-color:var(--ink)}
+.cta-banner .button.primary{background:var(--ink); color:#fff; border-color:var(--ink)}
+.cta-banner .button.primary:hover{background:var(--ink-2)}
+
+/* CONTACT */
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:start;
+}
+.title-block{
+    border:2px solid var(--ink);
+    background:#fff;
+}
+.title-block-row{
+    display:grid;
+    grid-template-columns:140px 1fr;
+    gap:12px;
+    padding:18px 18px;
+    border-bottom:1px solid var(--line);
+}
+.title-block-row:last-child{border-bottom:none}
+.title-block-row .label{
+    font-family:'Oswald', sans-serif;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--orange-deep);
+}
+.title-block-row .value{
+    font-size:15px;
+    font-weight:500;
+}
+.title-block-row .value a:hover{color:var(--orange-deep)}
+.title-block-cta{
+    padding:20px 18px;
+    background:var(--concrete-2);
+}
+.prep-list{
+    margin-top:28px;
+    border:2px solid var(--ink);
+    background:#fff;
+    padding:26px 26px 28px;
+}
+.prep-list h4{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size:16px;
+    text-transform:uppercase;
+    margin-bottom:14px;
+}
+.prep-list li{
+    padding:9px 0;
+    font-size:14px;
+    display:flex;
+    gap:10px;
+    color:var(--steel);
+}
+.prep-list li::before{content:"→"; color:var(--orange-deep); font-weight:700; flex-shrink:0}
+
+footer{
+    background:var(--ink);
+    color:#A79E8E;
+    padding:34px 0;
+    font-size:12.5px;
+}
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    font-family:'Oswald', sans-serif;
+    letter-spacing:.02em;
+    text-transform:uppercase;
+    font-size:12px;
+}
+
+/* MOBILE */
+@media (max-width: 980px){
+    .container{width:min(calc(100% - 32px),var(--max))}
+    .header-inner{min-height:76px}
+    .nav{
+        position:absolute;
+        left:0;right:0;top:100%;
+        background:var(--concrete);
+        border-bottom:3px solid var(--ink);
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
+        padding:8px 16px 18px;
+    }
+    .nav.open{display:flex}
+    .nav a{padding:15px 4px;border-bottom:1px solid var(--line)}
+    .nav .cta{text-align:center;margin-top:8px;margin-left:0}
+    .menu-toggle{display:block}
+    .hero{grid-template-columns:1fr}
+    .hero-copy{padding:56px 0 20px}
+    .hero-visual{margin:0 0 46px; flex-direction:row; flex-wrap:wrap}
+    .divisions-grid{grid-template-columns:repeat(2,1fr); border-right:2px solid var(--ink)}
+    .division-card{border-bottom:2px solid var(--ink)}
+    .process-list{grid-template-columns:1fr 1fr;row-gap:44px}
+    .process-list::before{display:none}
+    .stats-grid{grid-template-columns:repeat(2,1fr); row-gap:24px}
+    .stat-item{border-left:none; border-top:1px solid var(--line); padding-top:20px}
+    .values-grid{grid-template-columns:repeat(2,1fr)}
+    .timeline{grid-template-columns:repeat(2,1fr); row-gap:26px}
+    .service-block{grid-template-columns:1fr; gap:26px}
+    .projects-grid{grid-template-columns:repeat(2,1fr)}
+    .contact-grid{grid-template-columns:1fr; gap:40px}
+    .cta-banner-inner{flex-direction:column; align-items:flex-start}
+}
+
+@media (max-width: 600px){
+    .topline-inner{min-height:auto;padding:8px 0;font-size:10px;flex-wrap:wrap; gap:6px}
+    .brand img{max-width:150px;max-height:38px}
+    section{padding:60px 0}
+    .hero-copy{padding:44px 0 16px}
+    .hero-visual{padding:24px}
+    .hero-subtitle{font-size:14px}
+    .button{width:100%}
+    .divisions-grid{grid-template-columns:1fr}
+    .process-list{grid-template-columns:1fr;gap:34px}
+    .values-grid{grid-template-columns:1fr; gap:16px}
+    .timeline{grid-template-columns:1fr 1fr}
+    .projects-grid{grid-template-columns:1fr}
+    .title-block-row{grid-template-columns:1fr;gap:4px}
+    .footer-inner{flex-direction:column;gap:8px}
+    .stats-grid{grid-template-columns:1fr 1fr}
+}
+
+@media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{transition:none!important}
+}
+</style>
+</head>
+<body>
+
+    <div class="topline">
+        <div class="container topline-inner">
+            <span>Sediu: București, România</span>
+            <span>Șantiere active — Ilfov &amp; toată țara</span>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html" aria-label="Aurevix">
+                <img src="images/logo.png" alt="Aurevix"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                <span class="brand-fallback">Aurevix</span>
+            </a>
+
+            <button class="menu-toggle" type="button" aria-label="Deschide meniul"
+                    aria-expanded="false" aria-controls="main-nav">☰</button>
+
+            <nav class="nav" id="main-nav">
+                <a href="index.html">Acasă</a>
+                <a href="despre.html">Despre noi</a>
+                <a class="current" href="servicii.html">Servicii</a>
+                <a href="proiecte.html">Proiecte</a>
+                <a href="contact.html">Contact</a>
+                <a class="cta" href="contact.html">Cere ofertă</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <div class="eyebrow">Ce construim</div>
+                <h1>PATRU DIVIZII.<br><span class="accent">UN SINGUR STANDARD.</span></h1>
+                <p class="lead">
+                    De la o casă de familie până la o hală industrială, fiecare
+                    proiect Aurevix trece prin aceleași echipe proprii și aceleași
+                    verificări de calitate.
+                </p>
+            </div>
+        </section>
+
+        <section class="light-section" style="padding-bottom:0">
+            <div class="container">
+
+                <div class="service-block" id="case">
+                    <div>
+                        <span class="division-index">DIVIZIA 01 — AUREVIX CASE</span>
+                        <h3>Case &amp; locuințe</h3>
+                        <p class="service-desc">Construcții rezidențiale la cheie — case, vile și duplexuri — de la primul metru cub de fundație până la ultimul detaliu de finisaj interior.</p>
+                        <div class="service-block-cta">
+                            <a class="button primary" href="contact.html">Cere ofertă pentru o casă</a>
+                        </div>
+                    </div>
+                    <ul class="service-list">
+                        <li>Fundații și structură din beton armat</li>
+                        <li>Zidărie și acoperiș</li>
+                        <li>Instalații electrice, termice și sanitare</li>
+                        <li>Finisaje interioare la cheie</li>
+                        <li>Consultanță pentru alegerea proiectului de arhitectură</li>
+                    </ul>
+                </div>
+
+                <div class="service-block" id="hale">
+                    <div>
+                        <span class="division-index">DIVIZIA 02 — AUREVIX HALE</span>
+                        <h3>Hale &amp; spații comerciale</h3>
+                        <p class="service-desc">Structuri industriale și comerciale gândite pentru flux logistic, rezistență la sarcini mari și termene scurte de execuție.</p>
+                        <div class="service-block-cta">
+                            <a class="button primary" href="contact.html">Cere ofertă pentru o hală</a>
+                        </div>
+                    </div>
+                    <ul class="service-list">
+                        <li>Structuri metalice și hale prefabricate</li>
+                        <li>Platforme betonate industriale</li>
+                        <li>Hidroizolații și termoizolații pentru acoperiș</li>
+                        <li>Amenajare spații de birouri în incinta halei</li>
+                        <li>Coordonare cu proiectantul de instalații industriale</li>
+                    </ul>
+                </div>
+
+                <div class="service-block" id="renovari">
+                    <div>
+                        <span class="division-index">DIVIZIA 03 — AUREVIX RENOVĂRI</span>
+                        <h3>Renovări &amp; consolidări</h3>
+                        <p class="service-desc">Modernizăm clădiri existente — de la mansardări și izolații termice, până la consolidări structurale complete în urma unei expertize tehnice.</p>
+                        <div class="service-block-cta">
+                            <a class="button primary" href="contact.html">Cere ofertă de renovare</a>
+                        </div>
+                    </div>
+                    <ul class="service-list">
+                        <li>Consolidări structurale (fisuri, tasări, risc seismic)</li>
+                        <li>Mansardări și extinderi</li>
+                        <li>Refacere instalații electrice și sanitare</li>
+                        <li>Izolații termice exterioare (sistem ETICS)</li>
+                        <li>Renovări complete, de la demolare la finisaj</li>
+                    </ul>
+                </div>
+
+                <div class="service-block" id="exterior">
+                    <div>
+                        <span class="division-index">DIVIZIA 04 — AUREVIX EXTERIOR</span>
+                        <h3>Amenajări exterioare</h3>
+                        <p class="service-desc">Alei, terase, împrejmuiri și sisteme de scurgere — finalul care face diferența dintre un șantier și o casă gata de locuit.</p>
+                        <div class="service-block-cta">
+                            <a class="button primary" href="contact.html">Cere ofertă pentru exterior</a>
+                        </div>
+                    </div>
+                    <ul class="service-list">
+                        <li>Alei și platforme betonate sau pavate</li>
+                        <li>Împrejmuiri și porți</li>
+                        <li>Terase și pergole</li>
+                        <li>Sisteme de scurgere și drenaj</li>
+                        <li>Amenajări peisagistice de bază</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="dark-section">
+            <div class="container">
+                <div class="section-heading">
+                    <div class="eyebrow">Lucrări conexe</div>
+                    <h2>Ce mai facem<br>pe șantier.</h2>
+                    <p>Servicii pe care le integrăm în orice proiect, la cerere, fără să fie nevoie de un contractor separat.</p>
+                </div>
+                <div class="chip-row">
+                    <span class="chip">Demolări controlate</span>
+                    <span class="chip">Cofraje &amp; armături</span>
+                    <span class="chip">Hidroizolații</span>
+                    <span class="chip">Șape &amp; pardoseli industriale</span>
+                    <span class="chip">Vopsitorii exterioare</span>
+                    <span class="chip">Tâmplărie PVC &amp; aluminiu</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="light-section">
+            <div class="container">
+                <div class="section-heading">
+                    <div class="eyebrow">Întrebări frecvente</div>
+                    <h2>Înainte să<br>ne scrii.</h2>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <h4>Lucrați și cu materiale puse de client?</h4>
+                        <p>Da. Putem executa lucrarea cu materialele alese de tine sau putem propune o listă de materiale verificate, în funcție de buget și termen.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Oferiți garanție scrisă?</h4>
+                        <p>Da, oferim garanție scrisă de până la 10 ani pentru lucrările structurale și garanții specifice pentru instalații și finisaje, menționate clar în contract.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Cât durează primirea unei oferte?</h4>
+                        <p>De obicei, sub 5 zile lucrătoare de la vizita tehnică, în funcție de complexitatea proiectului.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="cta-banner">
+            <div class="container cta-banner-inner">
+                <div>
+                    <h2>Ai un teren sau o clădire de renovat?</h2>
+                    <p>Trimite-ne detaliile șantierului și revenim cu o ofertă fermă în maximum 5 zile lucrătoare.</p>
+                </div>
+                <a class="button primary" href="contact.html">Cere ofertă gratuită</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <span>© Aurevix. Toate drepturile rezervate.</span>
+            <span>Construcții civile &amp; industriale — București, România</span>
+        </div>
+    </footer>
+
+    <script>
+        const toggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('#main-nav');
+
+        toggle.addEventListener('click', () => {
+            const isOpen = nav.classList.toggle('open');
+            toggle.setAttribute('aria-expanded', String(isOpen));
+            toggle.textContent = isOpen ? '×' : '☰';
+        });
+
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('open');
+                toggle.setAttribute('aria-expanded', 'false');
+                toggle.textContent = '☰';
+            });
+        });
+    </script>
+</body>
+</html>
